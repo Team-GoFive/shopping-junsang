@@ -1,0 +1,31 @@
+services:
+  local-mysql:
+    image: mysql
+    container_name: techup-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+    platform: linux/arm64
+
+  local-redis:
+    image: redis
+    container_name: techup-redis
+    ports:
+      - "6379:6379"
+    platform: linux/arm64
+
+  local-prometheus:
+    image: prom/prometheus:latest
+    container_name: my-prometheus-container
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  local-grafana:
+    image: grafana/grafana:latest
+    container_name: my-grafana-container
+    ports:
+      - "3001:3000"
+    depends_on:
+      - local-prometheus
