@@ -1,7 +1,7 @@
 package com.kt.shopping;
 
 import com.kt.common.support.VisitorEvent;
-import com.kt.service.VisitStatService;
+import com.kt.shopping.service.VisitStatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;

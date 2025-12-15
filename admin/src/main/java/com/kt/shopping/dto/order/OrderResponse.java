@@ -1,6 +1,6 @@
 package com.kt.shopping.dto.order;
 
-import com.kt.domain.order.OrderStatus;
+import com.kt.shopping.domain.order.OrderStatus;
 import com.querydsl.core.annotations.QueryProjection;
 
 import java.time.LocalDateTime;

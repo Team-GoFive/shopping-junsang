@@ -22,11 +22,6 @@ public class Order extends BaseEntity {
 	private OrderStatus status;
 	private LocalDateTime deliveredAt;
 
-	// 연관관계
-	// 주문 <-> 회원
-	// N : 1 => 다대일
-	// ManyToOne
-	// FK => 많은 쪽에 생김
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
@@ -52,15 +47,4 @@ public class Order extends BaseEntity {
 	public void mapToOrderProduct(OrderProduct orderProduct) {
 		this.orderProducts.add(orderProduct);
 	}
-
-	//하나의 오더는 여러개의 상품을 가질수있음
-	// 1:N
-	//하나의 상품은 여러개의 오더를 가질수있음
-	// 1:N
-
-	// 주문생성
-	// 주문상태변경
-	// 주문생성완료재고차감
-	// 배송받는사람정보변경
-	// 주문취소
 }

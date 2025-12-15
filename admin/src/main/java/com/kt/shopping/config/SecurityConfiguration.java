@@ -1,7 +1,7 @@
 package com.kt.shopping.config;
 
 import com.kt.common.encoder.PasswordEncoder;
-import com.kt.security.JwtFilter;
+import com.kt.shopping.security.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,9 +22,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-	// 패스워드 저장할거면 암호화해
-	// bcrypt단방향해시암호화
-	// 평문은 5번 해싱해서 랜덤한 값을 저장함 -> 비교할때는 5번해싱해서 같은지를 비교
 	private final JwtFilter jwtFilter;
 
 	private static final String[] GET_PERMIT_ALL = {"/api/health/**", "/swagger-ui/**", "/v3/api-docs/**",
@@ -36,7 +33,6 @@ public class SecurityConfiguration {
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		// 어댑터 패턴 -> 이미 구현 되어있는 것을 래핑하는 패턴
 		return new PasswordEncoder() {
 			private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 

@@ -1,6 +1,6 @@
 package com.kt.shopping.dto.user;
 
-import com.kt.domain.user.User;
+import com.kt.shopping.domain.user.User;
 
 import java.time.LocalDateTime;
 

@@ -1,14 +1,12 @@
 package com.kt.shopping.dto.user;
 
-import com.kt.domain.user.Gender;
+import com.kt.shopping.domain.user.Gender;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
 
-// bean validation이라는 기능을 통해서 유효성 검사
-// DTO(Data Transfer Object) : 계층(레이어) 간 데이터 교환을 위한 객체
 public record UserCreateRequest(
 	@NotBlank
 	String loginId,

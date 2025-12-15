@@ -3,10 +3,10 @@ package com.kt.shopping.service;
 import com.kt.common.encoder.PasswordEncoder;
 import com.kt.common.exception.ErrorCode;
 import com.kt.common.support.Preconditions;
-import com.kt.domain.user.User;
-import com.kt.dto.user.UserRequest;
-import com.kt.repository.order.OrderRepository;
-import com.kt.repository.user.UserRepository;
+import com.kt.shopping.domain.user.User;
+import com.kt.shopping.dto.user.UserRequest;
+import com.kt.shopping.repository.order.OrderRepository;
+import com.kt.shopping.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,11 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
-// 구현체가 하나 이상 필요로해야 인터페이스가 의미가있다
-// 인터페이스 : 구현체 1:1로 다 나눠야하나
-// 관례를 지키려고 추상화를 굳이하는 것을 관습적추상화
-// 인터페이스로 굳이 나눴을때 불편한 점
-
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -27,10 +22,6 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
 	private final OrderRepository orderRepository;
-
-	// 트랜잭션 처리해줘
-	// PSA - Portable Service Abstraction
-	// 환경설정을 살짝 바꿔서 일관된 서비스를 제공하는 것
 	public void create(UserRequest.Create request) {
 		var newUser = User.normalUser(
 			request.loginId(),

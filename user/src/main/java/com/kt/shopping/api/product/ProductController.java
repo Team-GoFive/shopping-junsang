@@ -2,8 +2,8 @@ package com.kt.shopping.api.product;
 
 import com.kt.common.response.ApiResult;
 import com.kt.common.support.SwaggerAssistance;
-import com.kt.dto.product.ProductRequest;
-import com.kt.service.ProductService;
+import com.kt.shopping.dto.product.ProductRequest;
+import com.kt.shopping.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

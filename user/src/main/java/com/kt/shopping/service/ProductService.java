@@ -1,7 +1,7 @@
 package com.kt.shopping.service;
 
-import com.kt.domain.product.Product;
-import com.kt.repository.product.ProductRepository;
+import com.kt.shopping.domain.product.Product;
+import com.kt.shopping.repository.product.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

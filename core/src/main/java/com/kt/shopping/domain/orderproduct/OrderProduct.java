@@ -16,7 +16,6 @@ public class OrderProduct extends BaseEntity {
 	private Long quantity;
 
 	@ManyToOne
-	// @JoinColumn(name = "order_id", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
 	@JoinColumn(name = "order_id")
 	private Order order;
 
@@ -30,6 +29,5 @@ public class OrderProduct extends BaseEntity {
 		this.quantity = quantity;
 	}
 
-	// 주문생성되면 오더프로덕트도 같이 생성
 
 }
