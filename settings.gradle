@@ -8,3 +8,4 @@ include 'integration'
 include 'auth'
 
 include 'admin'
+include 'integration'
